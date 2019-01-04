@@ -181,12 +181,12 @@ module.exports={sub,parseCode,escodegen};
 //console.log(sub('let a =10 ; function foo(x,y,z){ while(a<100) a=a+10; if(a==200 ) return a-100; if(a==100) return a; if(a == 900) return 6 ; return 9; }'));
 
 
-
+/*
 console.log(sub('function foo(x, y, z){\n' +
     '    let x=0 ;\n' +
     '  if( 6&&x ) return true;\n' +
     '    return ;\n' +
-    '}'));
+    '}'));*/
 
 
 

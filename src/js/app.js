@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import {parseCode} from './code-analyzer';
+
 import {color} from './color';
 $(document).ready(function () {
     $('#codeSubmissionButton').click(() => {
@@ -11,7 +11,7 @@ $(document).ready(function () {
     });
 });
 function escapeRegExp(str) {
-    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 function replaceAll(str, find, replace) {
     return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
@@ -32,9 +32,9 @@ function draw(code,input) {
 
 }
 
-function getColor(jcode,i,codelines) {
-    console.log(i);
-    console.log(codelines[i]);
+function getColor(jcode,i) {
+    //console.log(i);
+    //console.log(codelines[i]);
     for(let g=0;g<jcode.length;g++){
         if(jcode[g].line == i)
             return  jcode[g].color ;
